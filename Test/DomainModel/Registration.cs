@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test
 {
-    class Registration
+    public class Registration
     {
         public string Email { get; set; }
         public Guid VerificationCode { get; set; }

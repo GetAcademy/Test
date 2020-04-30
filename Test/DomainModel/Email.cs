@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test
 {
-    class Email
+    public class Email
     {
         public string To { get; set; }
         public string HtmlContent { get; set; }

@@ -5,10 +5,10 @@ using Test.Exceptions;
 
 namespace Test
 {
-    class SubscriptionService
+    public class SubscriptionService
     {
-        private IEmailService _emailService;
-        private IRegistrationRepository _registrationRepository;
+        private readonly IEmailService _emailService;
+        private readonly IRegistrationRepository _registrationRepository;
 
         public SubscriptionService(IEmailService emailService, IRegistrationRepository registrationRepository)
         {
@@ -19,36 +19,10 @@ namespace Test
         public void Subscribe(string emailAddress)
         {
             var registration = new Registration(emailAddress);
-            try
-            {
-                var isSaved = _registrationRepository.Create(registration);
-            }
-            catch (NotImplementedException e)
-            {
-                throw new DatabaseUnresponsiveException(e);
-            }
-            catch (Exception e)
-            {
-                throw  new UnknownErrorException(e);
-            }
-
+            var rowsAffected = _registrationRepository.Create(registration);
+            if (rowsAffected == 0) return;
             var email = new ConfirmationEmail(emailAddress, registration.VerificationCode);
-            try
-            {
-                _emailService.Send(email);
-            }
-            catch (NotImplementedException e)
-            {
-                throw new MailServerException();
-            }
-            catch (CustomApplicationException)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                throw new UnknownErrorException(e);
-            }
+            _emailService.Send(email);
         }
     }
 }

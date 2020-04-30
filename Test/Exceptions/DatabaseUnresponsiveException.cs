@@ -4,8 +4,12 @@ using System.Text;
 
 namespace Test.Exceptions
 {
-    class DatabaseUnresponsiveException : CustomApplicationException
+    public class DatabaseUnresponsiveException : CustomApplicationException
     {
+        public DatabaseUnresponsiveException()
+        {
+        }
+
         public DatabaseUnresponsiveException(Exception innerException)
         : base("", innerException)
         {

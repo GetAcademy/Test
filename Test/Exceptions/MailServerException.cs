@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test.Exceptions
 {
-    class MailServerException : CustomApplicationException
+    public class MailServerException : CustomApplicationException
     {
     }
 }

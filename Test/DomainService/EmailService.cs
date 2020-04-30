@@ -10,6 +10,25 @@ namespace Test
         public bool Send(Email email)
         {
             throw new InvalidEmailAddressException();
+
+            /*
+            try
+            {
+                _emailService.Send(email);
+            }
+            catch (NotImplementedException e)
+            {
+                throw new MailServerException();
+            }
+            catch (CustomApplicationException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new UnknownErrorException(e);
+            }             
+             */
         }
     }
 }

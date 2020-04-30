@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Test
 {
-    interface IRegistrationRepository
+    public interface IRegistrationRepository
     {
         // CRUD - Create Read Update Delete
-        bool Create(Registration registration);
+        int Create(Registration registration);
         Registration Read(string email);
     }
 }

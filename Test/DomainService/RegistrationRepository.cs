@@ -6,9 +6,22 @@ namespace Test
 {
     class RegistrationRepository : IRegistrationRepository
     {
-        public bool Create(Registration registration)
+        public int Create(Registration registration)
         {
             throw new NotImplementedException();
+
+            //try
+            //{
+            //    var isSaved = _registrationRepository.Create(registration);
+            //}
+            //catch (NotImplementedException e)
+            //{
+            //    throw new DatabaseUnresponsiveException(e);
+            //}
+            //catch (Exception e)
+            //{
+            //    throw new UnknownErrorException(e);
+            //}
         }
 
         public Registration Read(string email)

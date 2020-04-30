@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test.Exceptions
 {
-    class CustomApplicationException : ApplicationException
+    public class CustomApplicationException : ApplicationException
     {
         public CustomApplicationException()
         {

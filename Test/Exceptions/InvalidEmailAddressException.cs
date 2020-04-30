@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test.Exceptions
 {
-    class InvalidEmailAddressException : CustomApplicationException
+    public class InvalidEmailAddressException : CustomApplicationException
     {
     }
 }

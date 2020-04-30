@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test.Exceptions
 {
-    class UnknownErrorException : CustomApplicationException
+    public class UnknownErrorException : CustomApplicationException
     {
         public UnknownErrorException(Exception innerException)
             : base("", innerException)
